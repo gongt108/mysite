@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
-conn = psycopg2.connect(DATABASE_URL, sslmode="require", port=5432, host="locahost")
+# conn = psycopg2.connect(DATABASE_URL, sslmode="require", port=5432, host="locahost")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,8 +82,19 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-MONGO_URI = os.getenv("MONGO_URI")
-DATABASES = {"default": {dj_database_url.config(conn_max_age=600, ssl_require=True)}}
+# MONGO_URI = os.getenv("MONGO_URI")
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "mysite",
+        "USER": "tiffanygong",
+        "PASSWORD": "testpass",
+        # "OPTIONS": {
+        #     "service": "my_service",
+        #     "passfile": ".my_pgpass",
+        # },
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
