@@ -79,7 +79,12 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 MONGO_URI = os.getenv("MONGO_URI")
-DATABASES = {"default": {}}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "mysite",
+    }
+}
 
 
 # Password validation
