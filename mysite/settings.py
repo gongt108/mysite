@@ -18,10 +18,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
-conn = psycopg2.connect(
-    database="mysite", user="tiffanygong", host="/tmp/", password="testpass"
-)
-# conn = psycopg2.connect(DATABASE_URL, sslmode="require", port=5432, host="locahost")
+# conn = psycopg2.connect(
+#     database="mysite", user="tiffanygong", host="/tmp/", password="testpass"
+# )
+# conn = psycopg2.connect(
+#     DATABASE_URL,
+#     sslmode="require",
+# )
+
 # conn = psycopg2.connect("dbname=mysite user=tiffanygong")
 # cur = conn.cursor()
 # cur.execute("SELECT * FROM polls_question")
@@ -30,7 +34,7 @@ conn = psycopg2.connect(
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print("BASE_DIR", BASE_DIR)
+# print("BASE_DIR", BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -93,24 +97,23 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 # MONGO_URI = os.getenv("MONGO_URI")
 DATABASES = {
+    "default": dj_database_url.config(
+        default=os.getenv("DATABASE_URL"), conn_max_age=600, ssl_require=True
+    )
     # "default": {
     #     "ENGINE": "django.db.backends.postgresql",
-    #     "NAME": "mysite",
-    #     "USER": "tiffanygong",
-    #     "PASSWORD": "testpass",
-    # "OPTIONS": {
-    #     "service": "my_service",
-    #     "passfile": ".my_pgpass",
-    # },
+    #     "NAME": "60v4fg5cti9am",
+    #     "USER": "iioplxwlkuxouj",
+    #     "PASSWORD": "c084a163d53c9fb4eddc3757454f3042a92622127a4ae54d944b4739f18bbea5",
+    #     # "USER": "tiffanygong",
+    #     # "PASSWORD": "testpass",
+    #     "HOST": "ec2-3-232-62-229.compute-1.amazonaws.com",
+    #     "PORT": 5432,
+    #     # "OPTIONS": {
+    #     #     "service": "my_service",
+    #     #     "passfile": ".my_pgpass",
+    #     # },
     # }
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "localhost",
-        "PORT": 5432,
-    }
 }
 
 # Password validation

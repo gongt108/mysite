@@ -21,11 +21,11 @@ body, html {height: 100%}
 
 <div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo">
-    <p>logo</p>
+    <p>Polls</p>
   </div>
-  <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">menu</button></p>
-    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">contact</button></p>
+  <div class="w3-display-topleft w3-container w3-xlarge flex flex-column">
+    <div style="margin-top: 20px; margin-bottom: 20px;"><a href="/admin" class="w3-button w3-black">Admin</a></div>
+    <div><a href="/polls" class="w3-button w3-black">Go to Polls</a></div>
   </div>
   <div class="w3-display-bottomleft w3-container">
     <p class="w3-xlarge">monday - friday 10-23 | saturday 14-02</p>
@@ -35,7 +35,7 @@ body, html {height: 100%}
 </div>
 
 <!-- Menu Modal -->
-<div id="menu" class="w3-modal">
+<!-- <div id="menu" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black w3-display-container">
       <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
@@ -67,13 +67,13 @@ body, html {height: 100%}
     </div>
   </div>
 </div>
-
+-->
 <!-- Contact Modal -->
-<div id="contact" class="w3-modal">
+<!-- <div id="contact" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black">
       <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Contact</h1>
+      <h1>Ask a question</h1>
     </div>
     <div class="w3-container">
       <p>Reserve a table, ask for today's special or just send us a message:</p>
@@ -86,7 +86,7 @@ body, html {height: 100%}
       </form>
     </div>
   </div>
-</div>
+</div>  -->
 
 </body>
 </html>
