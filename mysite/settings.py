@@ -93,24 +93,15 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 # MONGO_URI = os.getenv("MONGO_URI")
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql",
-    #     "NAME": "mysite",
-    #     "USER": "tiffanygong",
-    #     "PASSWORD": "testpass",
-    # "OPTIONS": {
-    #     "service": "my_service",
-    #     "passfile": ".my_pgpass",
-    # },
-    # }
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
+        "NAME": "mysite",
+        "USER": "tiffanygong",
+        "PASSWORD": "testpass",
         "HOST": "localhost",
         "PORT": 5432,
     }
+    
 }
 
 # Password validation
