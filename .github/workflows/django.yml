@@ -3,10 +3,10 @@ name: Django CI
 on:
   push:
     branches:
-      - main
+      - tiffany
   pull_request:
     branches:
-      - main
+      - tiffany
 
 jobs:
   build:
@@ -21,9 +21,9 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: postgresql-flat-73881
-          POSTGRES_USER: your_user
-          POSTGRES_PASSWORD: your_password
+          POSTGRES_DB: mysite
+          POSTGRES_USER: tiffanygong
+          POSTGRES_PASSWORD: testpass
         ports:
           - 5432:5432
         options: >-
