@@ -21,9 +21,10 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: mysite
-          POSTGRES_USER: tiffanygong
-          POSTGRES_PASSWORD: testpass
+          POSTGRES_HOST: localhost
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: test
         ports:
           - 5432:5432
         options: >-
