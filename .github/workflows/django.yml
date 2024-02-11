@@ -3,10 +3,10 @@ name: Django CI
 on:
   push:
     branches:
-      - tiffany
+      - main
   pull_request:
     branches:
-      - tiffany
+      - main
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.9, '3.10']
+        python-version: '3.10'
 
     services:
       postgres:
