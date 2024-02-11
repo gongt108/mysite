@@ -24,7 +24,6 @@ jobs:
           POSTGRES_DB: postgres
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
         ports:
           - 5432:5432
         options: >-
@@ -34,13 +33,9 @@ jobs:
           --health-retries 5
 
     steps:
-      - name: Read variable
-        run: echo "My secret key is ${{ secrets.SECRET_KEY }}"
       - uses: actions/checkout@v3
-      
       - name: Install library for postgres
         run: sudo apt-get install libpq-dev
-
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
