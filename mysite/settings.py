@@ -18,7 +18,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
-
+conn = psycopg2.connect(
+    dbname="mysite", user="tiffanygong", password="testpass", host="/tmp"
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
