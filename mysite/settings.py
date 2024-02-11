@@ -38,6 +38,21 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# using mailtrap.io
+# EMAIL_HOST = "sandbox.smtp.mailtrap.io"
+# EMAIL_HOST_USER = "32554d4b4bcda9"
+# EMAIL_HOST_PASSWORD = "66d4a0386fe090"
+# EMAIL_PORT = "2525"
+
+# using gmail
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "gongt108@gmail.com"
+EMAIL_HOST_PASSWORD = "zfte sxbu ejnt icix "
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -95,13 +110,21 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "mysite",
-        "USER": "tiffanygong",
-        "PASSWORD": "testpass",
-        # "OPTIONS": {
-        #     "service": "my_service",
-        #     "passfile": ".my_pgpass",
-        # },
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "localhost",
+        "PORT": 5432,
     }
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "mysite",
+    #     "USER": "tiffanygong",
+    #     "PASSWORD": "testpass",
+    #     # "OPTIONS": {
+    #     #     "service": "my_service",
+    #     #     "passfile": ".my_pgpass",
+    #     # },
+    # }
 }
 
 
@@ -145,3 +168,12 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+from django.forms.renderers import TemplatesSetting
+
+
+# class CustomFormRenderer(TemplatesSetting):
+#     form_template_name = "forms/form_snippet.html"
+
+
+# FORM_RENDERER = "project.settings.CustomFormRenderer"

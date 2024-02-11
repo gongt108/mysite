@@ -21,7 +21,7 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: postgres
+          POSTGRES_DB: mysite
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         ports:
